@@ -18,7 +18,7 @@ It is used like this;
             console.log ( 'This will be executed' );
         } )
         .Default ( function () {
-            console.log ( 'This will only be executed if non of the predicates match' );
+            console.log ( 'This will only be executed if none of the predicates match' );
         } );
 
             
