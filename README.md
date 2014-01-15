@@ -1,0 +1,24 @@
+semanticSwitch
+==============
+
+the switch statement, reimagined, semantically
+--------------
+
+This package acts as a drop-in replacement for the switch statement.
+
+It is used like this;
+
+    var semanticSwitch = require ( __dirname + '/../semanticSwitch.js' ).semanticSwitch;
+
+    new semanticSearch ( true )
+        .Case ( false, function () {
+            console.log ( 'This will not be executed' );
+        } )
+        .Case ( true, function () {
+            console.log ( 'This will be executed' );
+        } )
+        .Default ( function () {
+            console.log ( 'This will only be executed if non of the predicates match' );
+        } );
+
+            
