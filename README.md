@@ -6,7 +6,11 @@ the switch statement, reimagined, semantically
 
 acts as a drop-in replacement for the switch statement.
 
-It is used like this;
+Install like this:
+    
+    npm install semantic-switch
+
+It is used like this:
 
     var semanticSwitch = require ( 'semantic-switch' ).semanticSwitch;
 
