@@ -8,9 +8,9 @@ acts as a drop-in replacement for the switch statement.
 
 It is used like this;
 
-    var semanticSwitch = require ( __dirname + '/../semanticSwitch.js' ).semanticSwitch;
+    var semanticSwitch = require ( 'semantic-switch' ).semanticSwitch;
 
-    new semanticSearch ( true )
+    new semanticSwitch ( true )
         .Case ( false, function () {
             console.log ( 'This will not be executed' );
         } )
