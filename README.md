@@ -4,7 +4,7 @@ semanticSwitch
 the switch statement, reimagined, semantically
 --------------
 
-This package acts as a drop-in replacement for the switch statement.
+acts as a drop-in replacement for the switch statement.
 
 It is used like this;
 
