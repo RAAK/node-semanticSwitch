@@ -10,21 +10,23 @@ acts as a drop-in replacement for the switch statement.
 
 **Install like this:**
     
-    npm install semantic-switch
+```js
+npm install semantic-switch
+```
 
 **Use like this:**
 
-    var SemanticSwitch = require ( 'semantic-switch' ).SemanticSwitch;
+```js
+var SemanticSwitch = require ( 'semantic-switch' ).SemanticSwitch;
 
-    new SemanticSwitch ( true )
-        .CASE ( false, function () {
-            console.log ( 'This will not be executed' );
-        } )
-        .CASE ( true, function () {
-            console.log ( 'This will be executed' );
-        } )
-        .DEFAULT ( function () {
-            console.log ( 'This will only be executed if none of the predicates match' );
-        } );
-
-            
+new SemanticSwitch ( true )
+    .CASE ( false, function () {
+        console.log ( 'This will not be executed' );
+    } )
+    .CASE ( true, function () {
+        console.log ( 'This will be executed' );
+    } )
+    .DEFAULT ( function () {
+        console.log ( 'This will only be executed if none of the predicates match' );
+    } );
+```
