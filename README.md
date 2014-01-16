@@ -8,11 +8,11 @@ acts as a drop-in replacement for the switch statement.
 
 *idea & implementation pattern proposed by [Mat Carey](https://github.com/matcarey)*
 
-Install like this:
+**Install like this:**
     
     npm install semantic-switch
 
-It is used like this:
+**Use like this:**
 
     var SemanticSwitch = require ( 'semantic-switch' ).SemanticSwitch;
 
