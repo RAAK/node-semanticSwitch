@@ -1,4 +1,4 @@
-var semanticSwitch = function ( inputPredicate ) {
+var SemanticSwitch = function ( inputPredicate ) {
     this.inputPredicate = inputPredicate;
     this.matched = false;
 };
@@ -9,7 +9,7 @@ var runFunc = function ( func ) {
     }
 };
 
-semanticSwitch.prototype.Case = function ( predicate, func ) {
+SemanticSwitch.prototype.Case = function ( predicate, func ) {
     if ( ! this.matched ) {
         if ( predicate === this.inputPredicate ) {
             this.matched = true;
@@ -20,7 +20,7 @@ semanticSwitch.prototype.Case = function ( predicate, func ) {
     return this;
 };
 
-semanticSwitch.prototype.Default = function ( func ) {
+SemanticSwitch.prototype.Default = function ( func ) {
     if ( ! this.matched ) {
         runFunc ( func );
     }
@@ -28,4 +28,4 @@ semanticSwitch.prototype.Default = function ( func ) {
     return;
 };
 
-exports.semanticSwitch = semanticSwitch;
+exports.SemanticSwitch = SemanticSwitch;
