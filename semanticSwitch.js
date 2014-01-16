@@ -9,7 +9,7 @@ var runFunc = function ( func ) {
     }
 };
 
-SemanticSwitch.prototype.Case = function ( predicate, func ) {
+SemanticSwitch.prototype.CASE = function ( predicate, func ) {
     if ( ! this.matched ) {
         if ( predicate === this.inputPredicate ) {
             this.matched = true;
@@ -20,7 +20,7 @@ SemanticSwitch.prototype.Case = function ( predicate, func ) {
     return this;
 };
 
-SemanticSwitch.prototype.Default = function ( func ) {
+SemanticSwitch.prototype.DEFAULT = function ( func ) {
     if ( ! this.matched ) {
         runFunc ( func );
     }
