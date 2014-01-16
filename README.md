@@ -6,7 +6,7 @@ the switch statement, reimagined, semantically
 
 acts as a drop-in replacement for the switch statement.
 
-* idea & implementation pattern proposed by [Mat Carey](https://github.com/matcarey) *
+*idea & implementation pattern proposed by [Mat Carey](https://github.com/matcarey)*
 
 Install like this:
     
