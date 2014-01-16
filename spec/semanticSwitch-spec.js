@@ -1,10 +1,10 @@
-var semanticSwitch = require ( __dirname + '/../semanticSwitch.js' ).semanticSwitch;
+var SemanticSwitch = require ( __dirname + '/../SemanticSwitch.js' ).SemanticSwitch;
 
 var inputPredicate = function () { return 123; };
 var matchingPredicate = inputPredicate;
 var nonMatchingPredicate = function () { return 456; };
 
-describe ( 'semanticSwitch', function () {
+describe ( 'SemanticSwitch', function () {
     var matchingClause, nonMatchingClause, defaultClause;
 
     beforeEach ( function () {
@@ -13,54 +13,54 @@ describe ( 'semanticSwitch', function () {
         defaultClause = jasmine.createSpy ( 'defaultClause' );
     } );
 
-    it ( 'should be an object, have a custom "Case" method, which should be a function', function () {
-        expect ( new semanticSwitch ( inputPredicate () ) ).toEqual ( jasmine.any ( Object ) );
-        expect ( new semanticSwitch ( inputPredicate () ).Case ).toEqual ( jasmine.any ( Function ) );
+    it ( 'should be an object, have a custom "CASE" method, which should be a function', function () {
+        expect ( new SemanticSwitch ( inputPredicate () ) ).toEqual ( jasmine.any ( Object ) );
+        expect ( new SemanticSwitch ( inputPredicate () ).CASE ).toEqual ( jasmine.any ( Function ) );
     } );
 
-    it ( 'should execute the function the first function passed to "Case", where the predicate matches the inputPredicate to "semanticSwitch"', function () {
-        new semanticSwitch ( inputPredicate () )
-            .Case ( matchingPredicate (), matchingClause )
-            .Case ( nonMatchingPredicate (), nonMatchingClause );
+    it ( 'should execute the function the first function passed to "CASE", where the predicate matches the inputPredicate to "SemanticSwitch"', function () {
+        new SemanticSwitch ( inputPredicate () )
+            .CASE ( matchingPredicate (), matchingClause )
+            .CASE ( nonMatchingPredicate (), nonMatchingClause );
 
         expect ( matchingClause ).toHaveBeenCalled ();
         expect ( nonMatchingClause ).not.toHaveBeenCalled ();
     } );
 
-    it ( 'should not execute any function passed after the first matching "Case", even if the predicate matches the inputPredicate to "semanticSwitch"', function () {
-        new semanticSwitch ( inputPredicate () )
-            .Case ( matchingPredicate (), matchingClause )
-            .Case ( matchingPredicate (), nonMatchingClause );
+    it ( 'should not execute any function passed after the first matching "CASE", even if the predicate matches the inputPredicate to "SemanticSwitch"', function () {
+        new SemanticSwitch ( inputPredicate () )
+            .CASE ( matchingPredicate (), matchingClause )
+            .CASE ( matchingPredicate (), nonMatchingClause );
 
         expect ( matchingClause ).toHaveBeenCalled ();
         expect ( nonMatchingClause ).not.toHaveBeenCalled ();
     } );
 
     it ( 'should execute the first function with a matching predicate passed after non-matching "Cases"', function () {
-        new semanticSwitch ( inputPredicate () )
-            .Case ( nonMatchingPredicate (), nonMatchingClause )
-            .Case ( matchingPredicate (), matchingClause );
+        new SemanticSwitch ( inputPredicate () )
+            .CASE ( nonMatchingPredicate (), nonMatchingClause )
+            .CASE ( matchingPredicate (), matchingClause );
 
         expect ( matchingClause ).toHaveBeenCalled ();
         expect ( nonMatchingClause ).not.toHaveBeenCalled ();
     } );
 
-    it ( 'should execute the default function if no "Case" predicates matched the inputPredicate to "semanticSwitch"', function () {
-        new semanticSwitch ( inputPredicate () )
-            .Case ( nonMatchingPredicate (), nonMatchingClause )
-            .Case ( nonMatchingPredicate (), nonMatchingClause )
-            .Default ( defaultClause );
+    it ( 'should execute the default function if no "CASE" predicates matched the inputPredicate to "SemanticSwitch"', function () {
+        new SemanticSwitch ( inputPredicate () )
+            .CASE ( nonMatchingPredicate (), nonMatchingClause )
+            .CASE ( nonMatchingPredicate (), nonMatchingClause )
+            .DEFAULT ( defaultClause );
 
         expect ( matchingClause ).not.toHaveBeenCalled ();
         expect ( nonMatchingClause ).not.toHaveBeenCalled ();
         expect ( defaultClause ).toHaveBeenCalled ();
     } );
 
-    it ( 'should not execute the default function if any "Case" predicates matched the inputPredicate to "semanticSwitch"', function () {
-        new semanticSwitch ( inputPredicate () )
-            .Case ( nonMatchingPredicate (), nonMatchingClause )
-            .Case ( matchingPredicate (), matchingClause )
-            .Default ( defaultClause );
+    it ( 'should not execute the default function if any "CASE" predicates matched the inputPredicate to "SemanticSwitch"', function () {
+        new SemanticSwitch ( inputPredicate () )
+            .CASE ( nonMatchingPredicate (), nonMatchingClause )
+            .CASE ( matchingPredicate (), matchingClause )
+            .DEFAULT ( defaultClause );
 
         expect ( matchingClause ).toHaveBeenCalled ();
         expect ( nonMatchingClause ).not.toHaveBeenCalled ();

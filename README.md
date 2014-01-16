@@ -1,4 +1,4 @@
-semanticSwitch
+SemanticSwitch
 ==============
 
 the switch statement, reimagined, semantically
@@ -12,9 +12,9 @@ Install like this:
 
 It is used like this:
 
-    var semanticSwitch = require ( 'semantic-switch' ).semanticSwitch;
+    var SemanticSwitch = require ( 'semantic-switch' ).SemanticSwitch;
 
-    new semanticSwitch ( true )
+    new SemanticSwitch ( true )
         .Case ( false, function () {
             console.log ( 'This will not be executed' );
         } )
